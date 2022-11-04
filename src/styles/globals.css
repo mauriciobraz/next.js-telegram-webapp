@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --telegram-bg-color: var(--tg-theme-bg-color, #ffffff);
+    --telegram-text-color: var(--tg-theme-text-color, #000000);
+    --telegram-hint-color: var(--tg-theme-hint-color, #707579);
+    --telegram-link-color: var(--tg-theme-link-color, #3390ec);
+    --telegram-button-color: var(--tg-theme-button-color, #3390ec);
+    --telegram-button-text-color: var(--tg-theme-button-text-color, #ffffff);
+    --telegram-secondary-bg-color: var(--tg-theme-secondary-bg-color, #f4f4f5);
+  }
+
+  html {
+    @apply font-sans;
+  }
+}

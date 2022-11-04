@@ -1,9 +1,11 @@
 {
   "private": true,
   "scripts": {
+    "prepare": "husky install",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "latest",
@@ -15,8 +17,17 @@
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "autoprefixer": "^10.4.12",
+    "eslint": "8.26.0",
+    "eslint-config-next": "13.0.2",
+    "eslint-plugin-tailwindcss": "^3.6.2",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "postcss": "^8.4.18",
     "tailwindcss": "^3.2.1",
     "typescript": "4.8.4"
+  },
+  "lint-staged": {
+    "**/*.(ts|tsx)": "bash -c 'pnpm tsc --noEmit'",
+    "**/*.(ts|tsx|js)": "eslint --fix"
   }
 }

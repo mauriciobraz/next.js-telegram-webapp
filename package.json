@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^1.1.3",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -24,6 +25,7 @@
     "lint-staged": "^13.0.3",
     "postcss": "^8.4.18",
     "tailwindcss": "^3.2.1",
+    "telegram-webapps-types": "^1.0.5",
     "typescript": "4.8.4"
   },
   "lint-staged": {

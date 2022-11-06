@@ -32,6 +32,14 @@ Since Telegram only accepts HTTPS links, you'll need to use a tunneling service 
 ngrok http 3000
 ```
 
+### Bundle Analyzer
+
+This template is already configured to use [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer), that is a plugin for Next.js that analyzes the bundle size of your application (useful when you want to replace a library with another one that is smaller). The following command will generate a report in the `.next/analyze` folder and open it in your browser.
+
+```bash
+pnpm analyze
+```
+
 ## Request Hash Validation
 
 All the requests are validated using an API route that checks if the request is coming from Telegram. [Telegram's documentation](https://core.telegram.org/bots/webapps#validating-data-received-via-the-web-app) explains how it works.

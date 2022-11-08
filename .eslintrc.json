@@ -1,9 +1,17 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "plugin:tailwindcss/recommended"
+    "prettier"
   ],
   "plugins": [
-    "tailwindcss"
-  ]
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "plugins": ["prettier-plugin-tailwindcss"]
+      }
+    ]
+  }
 }

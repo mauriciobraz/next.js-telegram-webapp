@@ -1,7 +1,7 @@
-import type { NextPage } from "next";
-import Head from "next/head";
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
-import GithubSvg from "../assets/GithubSvg";
+import GithubSvg from '../assets/GithubSvg';
 
 const Home: NextPage = () => {
   return (
@@ -25,7 +25,7 @@ const Home: NextPage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
+          Powered by{' '}
           <span className="text-telegram-link">
             mauriciobraz/next.js-telegram-webapp
           </span>

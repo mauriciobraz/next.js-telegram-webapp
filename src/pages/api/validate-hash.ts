@@ -3,10 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 type Data = { ok: boolean } | { error: string };
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -35,8 +32,8 @@ async function isHashValid(data: Record<string, string>, botToken: string) {
   const encoder = new TextEncoder();
 
   const checkString = Object.keys(data)
-    .filter(key => key !== 'hash')
-    .map(key => `${key}=${data[key]}`)
+    .filter((key) => key !== 'hash')
+    .map((key) => `${key}=${data[key]}`)
     .sort()
     .join('\n');
 
@@ -48,11 +45,7 @@ async function isHashValid(data: Record<string, string>, botToken: string) {
     ['sign']
   );
 
-  const secret = await webcrypto.subtle.sign(
-    'HMAC',
-    secretKey,
-    encoder.encode(botToken)
-  );
+  const secret = await webcrypto.subtle.sign('HMAC', secretKey, encoder.encode(botToken));
 
   const signatureKey = await webcrypto.subtle.importKey(
     'raw',
@@ -62,11 +55,7 @@ async function isHashValid(data: Record<string, string>, botToken: string) {
     ['sign']
   );
 
-  const signature = await webcrypto.subtle.sign(
-    'HMAC',
-    signatureKey,
-    encoder.encode(checkString)
-  );
+  const signature = await webcrypto.subtle.sign('HMAC', signatureKey, encoder.encode(checkString));
 
   const hex = Buffer.from(signature).toString('hex');
 

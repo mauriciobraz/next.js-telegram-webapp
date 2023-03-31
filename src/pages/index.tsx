@@ -13,8 +13,7 @@ const Home: NextPage = () => {
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-4 text-center">
         <span className="text-2xl font-bold text-telegram-black">
-          This is a starter template using Next.js and Tailwind CSS for
-          Telegram&apos;s Web Apps.
+          This is a starter template using Next.js and Tailwind CSS for Telegram&apos;s Web Apps.
         </span>
       </main>
 
@@ -23,12 +22,9 @@ const Home: NextPage = () => {
           className="flex items-center justify-center gap-2 text-telegram-black"
           href="https://github.com/mauriciobraz/next.js-telegram-webapp"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           Powered by{' '}
-          <span className="text-telegram-link">
-            mauriciobraz/next.js-telegram-webapp
-          </span>
+          <span className="text-telegram-link">mauriciobraz/next.js-telegram-webapp</span>
           <GithubSvg className="h-6 w-6 fill-telegram-link" />
         </a>
       </footer>

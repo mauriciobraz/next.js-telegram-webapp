@@ -1,8 +1,8 @@
 import '../styles/globals.css';
 
+import axios from 'axios';
 import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isHashValid, setIsHashValid] = useState(false);
@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     axios
       .post('/api/validate-hash', { hash: window.Telegram.WebApp.initData })
-      .then(response => setIsHashValid(response.status === 200));
+      .then((response) => setIsHashValid(response.status === 200));
   }, []);
 
   if (!isHashValid) {

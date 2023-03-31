@@ -15,12 +15,12 @@ function useTelegramInitData() {
       new URLSearchParams(window.Telegram.WebApp.initData)
     );
 
-    let initData: Record<string, string> = {};
+    const initData: Record<string, string> = {};
 
     for (const key in firstLayerInitData) {
       try {
         initData[key] = JSON.parse(firstLayerInitData[key]);
-      } catch (e) {
+      } catch {
         initData[key] = firstLayerInitData[key];
       }
     }
